@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Operations</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Loop Operations</h1>
+
+    <label for="numberInput">Enter a number (n): </label>
+    <input type="number" id="numberInput">
+
+    <button onclick="performOperations()">Calculate</button>
+
+    <div id="results"></div>
+
+    <button onclick="goBack()">Back to Home</button>
+
+    <script>
+        function performOperations() {
+            var n = document.getElementById('numberInput').value;
+            var factorial = 1;
+            var sum = 0;
+
+            var i = 1;
+            while (i <= n) {
+                factorial *= i;
+                i++;
+            }
+
+            var j = 1;
+            do {
+                sum += j;
+                j++;
+            } while (j <= n);
+
+            var average = 0;
+            for (var k = 1; k <= n; k++) {
+                average += k;
+            }
+            average /= n;
+
+            // Display results
+            var resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <p>${n} factorial is: ${factorial}</p>
+                <p>The sum of the first ${n} numbers is: ${sum}</p>
+                <p>The average of the first ${n} numbers is: ${average}</p>
+            `;
+        }
+
+        function goBack() {
+            window.location.href = "./index.html";
+        }
+    </script>
+</body>
+
+</html>
