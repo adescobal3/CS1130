@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Blank template</title>
+
+    <!-- Load external CSS styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>This page adds 2 numbers</h1>
+    <br><br>
+    <label for="n1">Type the first number:</label>
+    <input id="n1" type="number"><br>
+    <label for="n2">Type the second number:</label>
+    <input id="n2" type="number">
+    <button onclick="computeSum()">Compute Sum</button>
+    <br>
+    <label for="sum">The sum is:</label>
+    <input id="sum" type="number" readonly><br><br>
+
+    <!-- Back to Home Button -->
+    <button onclick="goBack()">Back to Home</button>
+
+    <!-- Load external JavaScript -->
+    <script src="scripts.js"></script>
+    <br><br>
+
+    <script>
+        function computeSum() {
+            var x1 = document.getElementById("n1").value * 1;
+            var x2 = document.getElementById("n2").value * 1;
+            var x3 = x2 + x1;
+
+            document.getElementById("sum").value = x3;
+        }
+
+        function goBack() {
+            window.location.href = "./index.html";
+        }
+    </script>
+</body>
+</html>
